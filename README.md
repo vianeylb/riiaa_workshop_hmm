@@ -1,4 +1,4 @@
-# Repositorio template para un workshop en RIIAA
+# Introduction to hidden Markov models/Introducción a modelos ocultos de Markov
 
 Este repositorio de github contiene material para un workshop plantilla dentro de la [RIIAA](https://riiaa.org/). Para utilizarlo en tu propio taller, sigue a la siguiente sección. Nunca has usado github o markdown o jupyter/colab?
 Hay muchas guías en línea para usar estas tecnologías, algunas recomendaciones:
