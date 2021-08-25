@@ -1,0 +1,47 @@
+---
+title: "Fit an HMM in Stan"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+library(tidyverse)
+library(rstan)
+
+rstan_options(auto_write = TRUE)
+options(mc.cores = parallel::detectCores())
+```
+
+## Simulating Data
+
+```{r}
+N <- 2
+init <- rep(1/N, N)
+
+tpm <- matrix(c(0.8, 0.2, 
+                0.3, 0.7), 
+              byrow=T, nrow=2)
+
+len <- 2000
+mu <- c(5, 10)
+sd <- c(2, 1)
+
+states <- numeric(len)
+obs <- numeric(len)
+
+## sample function 
+states[1] <- sample(size=1, x = 1:N, prob = init)
+
+for(j in 2:len){
+  states[j] <- sample(size=1, x = 1:N, prob = tpm[states[j-1],])
+}
+
+obs <- rnorm(len, mean=mu[states], sd = sd[states])
+```
+
+## Fitting the model
+
+```{r}
+stan.data.bhmm <- list(N = N, y=obs, T=len)
+fit.bhmm <- stan(file="BasicHMM.stan", data=stan.data.bhmm, chains=3, 
+                 iter=2000, warmup = 1000)
+```
