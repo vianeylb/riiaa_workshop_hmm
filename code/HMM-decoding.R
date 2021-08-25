@@ -77,7 +77,7 @@ for (j in 2:50)
 
 data$state=as.factor(data$state)
 
-ggplot(data %>% filter(timeseries=='T1'))+ geom_point(aes(x=time,y=state,col=state))+theme_bw()
+ggplot(data %>% filter(timeseries=='T12'))+ geom_point(aes(x=time,y=state,col=state))+theme_bw()
 
 
 ###############################
@@ -155,8 +155,7 @@ for (j in 1:50) {
 #### b.1 local decoding  #####
 ###############################
 
-data$predstateFB <- NA
-ACC.FB=numeric(50)
+AccFB=numeric(50)
 CE=numeric(50)
 
 for(u in 1:50){
@@ -202,7 +201,7 @@ acast(data, state~predstateFB)
 ###############################
 
 data$predstateV <- NA
-ACC.V=numeric(50)
+AccV=numeric(50)
 
 for(u in 1:50){
   tempdat <- filter(data, timeseries==tracks[u])
