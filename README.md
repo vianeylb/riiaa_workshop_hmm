@@ -10,14 +10,9 @@ Mas dudas?, escríbele a los organizadores :) o pon un [github issue](https://he
 
 ## Organización del repositorio
 
-La estructura está inspirado en una versión lite de [cookie cutter data science project](https://drivendata.github.io/cookiecutter-data-science/):
-
-* **data/**: folder de datos para tu taller. Es recomendable enfocarse en un dataset o dos durante el workshop (vs varios), asi los talleristas podrán profundizar en aspectos específico de los datos y después enfocar su atención a la parte algorítmica/teoria del taller.
+* **data/**: folder de datos para el taller.
 * **code/**: funciones de utilidad para usar en los notebooks.
-* **notebook/**: jupyter notebooks que se pueden lanzar en colab. Enumera los notebook en orden de uso.
-* **media/**: imagenes para usar en tus notebooks y repo.
-* **environment.yml**: archivos anaconda para replicar el software stack localmente.
-* **README.md**: archivo markdown de entrada para la pagina y tu taller.
+* **notebook/**: Rmarkdown notebooks
 
 ## Instrucciones para estudiantes
 
