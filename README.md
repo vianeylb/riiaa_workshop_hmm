@@ -5,7 +5,6 @@ Este repositorio de github contiene material para el taller: Introducción a mod
 ## Organización del repositorio
 
 * **slides/** folder de diapositivas para el taller
-* **data/**: folder de datos para el taller
 * **code/**: funciones de utilidad para usar en los notebooks
 * **notebook/**: Rmarkdown notebooks
 
